@@ -15,9 +15,9 @@ while True:
         if month < 3:
             print(1)
         else:
-            a,b = 1,1
-            for i in range(3,month+1):
-                a,b = b,a+b #依据a,b的初始值，先计算‘=’号右边的值，暂时不考虑左边的值。
+            a, b = 1, 1
+            for i in range(3, month + 1):
+                a, b = b, a + b  # 依据a,b的初始值，先计算‘=’号右边的值，暂时不考虑左边的值。
             print(b)
     except:
         break
