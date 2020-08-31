@@ -27,7 +27,7 @@ class Solution:
         return dp_i_0
 
 
-prices = [7,1,5,3,6,4]
-
+#prices = [7,1,5,3,6,4]
+prices = [1,9,6,9,1,7,1,1,5,9,9,9]
 s = Solution()
 print(s.maxProfit(prices))

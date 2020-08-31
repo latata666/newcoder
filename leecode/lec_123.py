@@ -17,20 +17,22 @@
 
 class Solution:
     def maxProfit(self, prices):
+
         n = len(prices)
-        dp_i_0 = 0
-        dp_i_1 = float('-inf')
-        dp_pre_0 = 0
+        dp_i_10 = 0
+        dp_i_11 = float('-inf')
+        dp_i_20 = 0
+        dp_i_21 = float('-inf')
+
         for i in range(n):
-            tmp = dp_i_0
-            dp_i_0 = max(dp_i_0,dp_i_1+prices[i])
-            dp_i_1 = max(dp_i_1,dp_pre_0-prices[i])
-            dp_pre_0 = tmp
+            dp_i_20 = max(dp_i_20,dp_i_21 + prices[i])
+            dp_i_21 = max(dp_i_21,dp_i_10 - prices[i])
+            dp_i_10 = max(dp_i_10,dp_i_11 + prices[i])
+            dp_i_11 = max(dp_i_11,-prices[i])
+        return dp_i_20
 
-        return dp_i_0
 
-
-prices = [3,3,5,0,0,3,1,4]
-
+#prices = [3,3,5,0,0,3,1,4]
+prices = [1,9,6,9,1,7,1,1,5,9,9,9]
 s = Solution()
 print(s.maxProfit(prices))

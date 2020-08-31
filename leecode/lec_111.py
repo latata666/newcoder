@@ -42,19 +42,19 @@ class TreeNode:
 
 
 #方法一
-# class Solution:
-#     def minDepth(self, root: TreeNode) -> int:
-#         if not root:
-#             return 0
-#         children = [root.left, root.right]
-#         if not any(children):
-#             return 1
-#         min_depth = float('inf')
-#         for c in children:
-#             if c:
-#                 min_depth = min(self.minDepth(c), min_depth)
-#
-#         return min_depth + 1
+class Solution:
+    def minDepth(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+        children = [root.left, root.right]
+        if not any(children):
+            return 1
+        min_depth = float('inf')
+        for c in children:
+            if c:
+                min_depth = min(self.minDepth(c), min_depth)
+
+        return min_depth + 1
 
 
 #node = TreeNode([3, 9, 20, None, None, 15, 7])
